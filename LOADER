@@ -1,0 +1,230 @@
+--[[
+	Roblox2Lua
+	----------
+	
+	This code was generated using
+	Deluct's Roblox2Lua plugin.
+]]--
+
+--// Instances
+
+local screen_gui = Instance.new("ScreenGui")
+screen_gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screen_gui.Parent = workspace
+
+local main = Instance.new("Frame")
+main.AnchorPoint = Vector2.new(0.5, 0.5)
+main.BackgroundColor3 = Color3.new(1, 1, 1)
+main.BackgroundTransparency = 1
+main.Position = UDim2.new(0.5, 0, 0.5, 0)
+main.Size = UDim2.new(0, 100, 0, 100)
+main.Name = "Main"
+main.Parent = screen_gui
+
+local head = Instance.new("TextLabel")
+head.Font = Enum.Font.GothamMedium
+head.Text = "Ro-Hub: Free Roblox Hub!"
+head.TextColor3 = Color3.new(0.980392, 0.980392, 0.980392)
+head.TextSize = 14
+head.TextXAlignment = Enum.TextXAlignment.Left
+head.BackgroundColor3 = Color3.new(1, 1, 1)
+head.BackgroundTransparency = 1
+head.Position = UDim2.new(0.860000074, 0, 0.280000001, 0)
+head.Size = UDim2.new(0, 191, 0, 25)
+head.Name = "Head"
+head.Parent = main
+
+local desc = Instance.new("TextLabel")
+desc.Font = Enum.Font.GothamMedium
+desc.Text = "Loading, please hold.."
+desc.TextColor3 = Color3.new(0.882353, 0.478431, 0.478431)
+desc.TextSize = 13
+desc.TextXAlignment = Enum.TextXAlignment.Left
+desc.BackgroundColor3 = Color3.new(1, 1, 1)
+desc.BackgroundTransparency = 1
+desc.Position = UDim2.new(0.860000074, 0, 0.469999999, 0)
+desc.Size = UDim2.new(0, 191, 0, 25)
+desc.Name = "Desc"
+desc.Parent = main
+
+local settings = Instance.new("LocalScript")
+settings.Name = "Settings"
+settings.Parent = main
+
+local head2 = Instance.new("TextLabel")
+head2.Font = Enum.Font.GothamMedium
+head2.Text = "Created by Hexry, Sin, Void."
+head2.TextColor3 = Color3.new(0.980392, 0.980392, 0.980392)
+head2.TextSize = 14
+head2.TextXAlignment = Enum.TextXAlignment.Right
+head2.BackgroundColor3 = Color3.new(1, 1, 1)
+head2.BackgroundTransparency = 1
+head2.Position = UDim2.new(-1.77999985, 0, 0.280000001, 0)
+head2.Size = UDim2.new(0, 191, 0, 25)
+head2.Name = "Head2"
+head2.Parent = main
+
+local desc2 = Instance.new("TextLabel")
+desc2.Font = Enum.Font.GothamMedium
+desc2.Text = "discord.gg/29s6nuTXwY"
+desc2.TextColor3 = Color3.new(0.882353, 0.478431, 0.478431)
+desc2.TextSize = 13
+desc2.TextXAlignment = Enum.TextXAlignment.Right
+desc2.BackgroundColor3 = Color3.new(1, 1, 1)
+desc2.BackgroundTransparency = 1
+desc2.Position = UDim2.new(-1.77999985, 0, 0.469999999, 0)
+desc2.Size = UDim2.new(0, 191, 0, 25)
+desc2.Name = "Desc2"
+desc2.Parent = main
+
+local logo = Instance.new("ImageLabel")
+logo.Image = "http://www.roblox.com/asset/?id=10813970926"
+logo.BackgroundColor3 = Color3.new(1, 1, 1)
+logo.BackgroundTransparency = 1
+logo.Rotation = 76
+logo.Size = UDim2.new(0, 100, 0, 100)
+logo.Name = "Logo"
+logo.Parent = main
+
+local animate = Instance.new("LocalScript")
+animate.Name = "Animate"
+animate.Parent = logo
+
+local parent = Instance.new("LocalScript")
+parent.Name = "Parent"
+parent.Parent = screen_gui
+
+local rename = Instance.new("LocalScript")
+rename.Name = "Rename"
+rename.Parent = screen_gui
+
+--//Modules
+
+local modules = {}
+
+--// Scripts
+
+-- Settings
+task.spawn(function()
+	local script = settings
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	script.Parent.Logo.Position = UDim2.new(0, 0, 0, 1000)
+	script.Parent.Logo.Rotation = 0
+	for _,v in pairs(script.Parent:GetChildren()) do
+		if v.ClassName == "TextLabel" then
+			v.TextTransparency = 1
+		end
+	end
+	script.Parent.Head.Position = UDim2.new(0.34, 0,0.28, 0)
+	script.Parent.Desc.Position = UDim2.new(0.26, 0,0.47, 0)
+	script.Parent.Head2.Position = UDim2.new(0.34, 0,0.28, 0)
+	script.Parent.Desc2.Position = UDim2.new(0.26, 0,0.47, 0)
+end)
+
+-- Animate
+task.spawn(function()
+	local script = animate
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Service = game:GetService("TweenService");
+	local function Tween(Parent, Time, Info)
+		Service:Create(Parent, TweenInfo.new(Time, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), Info):Play()
+	end
+	
+	task.wait(.5)
+	Tween(script.Parent, 1, {Position = UDim2.new(0, 0, 0, 0)})
+	
+	wait(1.5)
+	Tween(script.Parent, 1, {Rotation = 76})
+	
+	wait(1.75)
+	Tween(script.Parent.Parent.Head, .55, {Position = UDim2.new(0.86, 0,0.28, 0)})
+	Tween(script.Parent.Parent.Head, .55, {TextTransparency = 0})
+	wait(.1)
+	
+	Tween(script.Parent.Parent.Desc, .55, {TextTransparency = 0})
+	Tween(script.Parent.Parent.Desc, .55, {Position = UDim2.new(0.86, 0,0.47, 0)})
+	
+	wait(1)
+	Tween(script.Parent.Parent.Head2, .55, {Position = UDim2.new(-1.78, 0,0.28, 0)})
+	Tween(script.Parent.Parent.Head2, .55, {TextTransparency = 0})
+	wait(.1)
+	
+	Tween(script.Parent.Parent.Desc2, .55, {TextTransparency = 0})
+	Tween(script.Parent.Parent.Desc2, .55, {Position = UDim2.new(-1.78, 0,0.47, 0)})
+	
+	wait(4)
+	
+	Tween(script.Parent.Parent.Head, .55, {Position = UDim2.new(-0.46, 0,0.37, 0)})
+	Tween(script.Parent.Parent.Head, .55, {TextTransparency = 1})
+	wait(.1)
+	
+	Tween(script.Parent.Parent.Desc, .55, {TextTransparency = 1})
+	Tween(script.Parent.Parent.Desc, .55, {Position = UDim2.new(-0.46, 0,0.37, 0)})
+	
+	wait(1)
+	Tween(script.Parent.Parent.Head2, .55, {Position = UDim2.new(-0.46, 0,0.37, 0)})
+	Tween(script.Parent.Parent.Head2, .55, {TextTransparency = 1})
+	wait(.1)
+	
+	Tween(script.Parent.Parent.Desc2, .55, {TextTransparency = 1})
+	Tween(script.Parent.Parent.Desc2, .55, {Position = UDim2.new(-0.46, 0,0.37, 0)})
+	wait(1)
+	
+	Tween(script.Parent, 1, {ImageTransparency = 1})
+	wait(1.5)
+	
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexry1/Loader/main/Gcheck2",true))()
+	wait(1)
+	
+	script.Parent.Parent.Parent:Destroy()
+end)
+
+-- Parent
+task.spawn(function()
+	local script = parent
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	wait(1)
+	while task.wait() do
+		script.Parent.Parent = game.CoreGui
+	end
+end)
+
+-- Rename
+task.spawn(function()
+	local script = rename
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local SELECTED_RANDOM_VALUE = tonumber(math.random(math.random(1, 9999), math.random(1, 9999)))
+	script.Parent.Name = "ROHUB_LOADER_"..SELECTED_RANDOM_VALUE
+end)
