@@ -1,0 +1,27 @@
+
+if game.PlaceId == 2377868063 then --Strucid
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/Strucid"))()
+elseif game.PlaceId == 9498006165 then --clicking sim
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/tapping%20sim"))()
+elseif game.PlaceId == 8737602449 then --pls donate
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/pls%20donate"))()
+elseif game.PlaceId == 3606833500 then --strucid zone wars
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/Strucid"))()
+elseif game.PlaceId == 6407649031 then --NSA
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/NSA"))()
+elseif game.PlaceId == 10119617028 then --Airsoft center
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/AC"))()
+elseif game.PlaceId == 6158075274 then --Caliber
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/Caliber"))()
+elseif game.PlaceId == 8750997647 then --Tapping legends X
+loadstring(game:HttpGet("https://raw.githubusercontent.com/voidisdaddy/scripts/main/tapping%20legends.lua",true))()
+elseif game.PlaceId == 2512643572 then --bubble gum sim
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/TEST/main/BBS",true))()
+elseif game.PlaceId == 3102144307 then --anime clicking sim
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/Anime%20Clicker%20Simulator",true))()
+elseif game.PlaceId == 6284583030 then --Pet sim X
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/petsimx",true))()
+elseif game.PlaceId == 8540346411 then --rebirht champ X
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/games/main/RBCX",true))()
+else return
+    end
